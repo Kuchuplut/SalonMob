@@ -1,0 +1,12 @@
+<ion-view title="Choose Package" id="page13">
+    <ion-content padding="true" class="has-header">
+        <div class="item item-body" id="choosePackage-list-item-container4">
+            <ion-list id="choosePackage-list9" ng-repeat = "package in packageList">
+                <ion-item class="item-thumbnail-left" id="choosePackage-list-item13" ui-sref="productDetails">
+                    <h2>{{package.strPackageName}}</h2>
+                    <h3 class="sub-text">{{package.dblPackagePrice | currency: "Php"}}</h3>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+$royal: #9C27B0;
+$calm: #7B1FA2;
+$dark: #212121;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.primary {
+	background-color: #9C27B0;
+}
+
+.dark-primary {
+	background-color: #7B1FA2;
+}
+
+.light-primary {
+	background-color: #E1BEE7;
+}
+
+.accent {
+	background-color: #FF5722;
+}
+
+.sub-text {
+	color: #757575;
+}
+

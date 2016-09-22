@@ -1,0 +1,11 @@
+<ion-view title="Choose Service" id="page6">
+    <ion-content padding="true" class="has-header">
+        <div class="item item-body" id="chooseService-list-item-container1">
+            <ion-list id="chooseService-list2">
+                <ion-item class="item-thumbnail-left" id="chooseService-list-item1" ng-repeat = "service in serviceList" ng-click = "openModal($index)">
+                    <h2>{{service.strServiceName}}</h2>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content> 
+</ion-view>

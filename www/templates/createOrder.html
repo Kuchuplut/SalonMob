@@ -1,0 +1,20 @@
+<ion-view title="Create Order" id="page12">
+    <ion-content padding="true" class="has-header">
+        <form id="createOrder-form7" class="list">
+            <a ui-sref="orderSummary" id="createOrder-button12" style="border-radius:20px 20px 20px 20px;" class="button button-balanced  button-block icon-right ion-android-done">Check out!</a>
+            <label class="item item-select" id="createOrder-select3">
+                <span class="input-label">Category</span>
+                <select></select>
+            </label>
+        </form>
+        <div class="item item-body" id="createOrder-list-item-container3">
+            <ion-list id="createOrder-list8" ng-repeat = "product in productList">
+                <ion-item class="item-thumbnail-left" id="createOrder-list-item12" ui-sref="productDetails({name: product.strProductName, price: product.dblProductPrice, id: product.intProductID})">
+                    <img ng-src="{{"localhost" + product.strPhotoPath}}">
+                    <h2>{{product.strProductName}} </h2>
+                    <h3 class="sub-text">{{product.dblProductPrice | currency: "Php"}}</h3>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

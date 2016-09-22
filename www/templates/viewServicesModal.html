@@ -1,0 +1,25 @@
+<ion-modal-view>
+   <ion-header-bar class = "bar bar-header bar-calm">
+     <h1 class="title">View Service</h1>
+   </ion-header-bar>
+   <ion-content>
+   		<div class="list card" id="productDetails-card21">
+   		    <ion-item id="productDetails-list-item2">{{name}} - {{id}}</ion-item>
+   		    <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
+   		        <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+   		    </div>
+   		    <div class="item item-body" id="productDetails-list-item-container2">
+   		        <div id="productDetails-markdown1" style="margin-top:0px;color:#000000;">
+   		            {{price | currency: "Php"}} 
+   		        </div>
+   		    </div>
+   		    <label class="item item-input" id="requestHomeReservation-input16">
+   		        <span class="input-label">Quantity</span>
+   		        <input type="number" placeholder="" ng-model = "service.quantity">
+   		    </label>
+   		</div>
+   		<button id="productDetails-button5" class="button button-balanced  button-block icon-left ion-android-cart"
+                ng-click = "addToCart()">Add to cart!</button>
+     <a ng-click = "closeModal()" id="closeModalButton" class="button button-assertive  button-block button-outline">Cancel</a>
+   </ion-content>
+ </ion-modal-view>

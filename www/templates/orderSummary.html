@@ -1,0 +1,36 @@
+<ion-view title="OrderSummary" id="page10">
+    <ion-content padding="true" class="has-header">
+        <form id="orderSummary-form5" class="list" ng-submit = "submitRequest(details)">
+            <ion-toggle toggle-class="toggle-positive" id="orderSummary-toggle2" ng-model = "details.orderType">Delivery</ion-toggle>
+            <label class="item item-input" id="orderSummary-input17">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="" ng-model = "details.name">
+            </label>
+            <label class="item item-input" id="orderSummary-input18">
+                <span class="input-label">Contact No.</span>
+                <input type="tel" placeholder="" ng-model = "details.number">
+            </label>
+            <label class="item item-input" id="orderSummary-input19" ng-if = "details.orderType">
+                <span class="input-label">Street</span>
+                <input type="text" placeholder="" ng-model = "details.street">
+            </label>
+       
+            <label class="item item-select" id="orderSummary-select2" ng-if = "details.orderType">
+                <span class="input-label">Location</span>
+                <select ng-model = "details.selectedLocation" ng-change = "compute()">
+                    <option ng-repeat = "location in locationList" ng-value = "location.intLocationID">
+                    {{location.strBarangay}}</option>
+                </select>
+            </label>
+         
+        <h4 id="orderSummary-heading2" style="color:#000000;font-weight:300;">Purchase Summary:</h4>
+        <ion-list id="orderSummary-list3" ng-repeat = "order in orderList" ng-if="orderList.length > 0">
+            <ion-item id="orderSummary-list-item4">{{order.name}} - {{order.price | currency: "Php"}}</ion-item>
+        </ion-list>
+        <ion-item class="item-divider sub-text" id="orderSummary-list-item-divider1">Sub Total: {{ total | currency: "Php"}}</ion-item>
+        <ion-item class="item-divider balanced" id="orderSummary-list-item-divider1">Net Total(+ Transpo Charge): {{netTotal | currency: "Php"}}</ion-item>
+        <h5>{{locationCost}}</h5>
+        <button id="orderSummary-button9" class="button button-positive  button-block icon-right ion-ios-checkmark-empty" type = "submit" value="action">SUBMIT</button>
+        </form>
+    </ion-content>
+</ion-view>
