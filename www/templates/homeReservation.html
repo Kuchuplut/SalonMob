@@ -1,35 +1,14 @@
-<ion-view title="Home Reservation" id="page2" >
-    <ion-content padding="true" class="has-header" style="background-color: #222222;">
-    <img src="img/house.jpg" height="200px" style="position: fixed; top: 0; left: 0; width: 100%;">
-    	<div class="spacer" style="height: 200px;"></div>
-    	<a ui-sref="tabsController.requestHomeReservation" id="homeReservation-button3" class="button accent button-large  button-block ion-plus-round z-depth-2"
-        style="border-radius: 40px; width: 10px; position: fixed; top: 160px; right: 10px; color: white; -webkit-box-shadow: 10px -33px 101px -24px rgba(0,0,0,1);
--moz-box-shadow: 10px -33px 101px -24px rgba(0,0,0,1);
-box-shadow: 10px -33px 101px -24px rgba(0,0,0,1);"></a>
-        <h3 id="homeReservation-heading3" align="left" style="color:white;font-weight:lighter;">Home Service</h3>
-        <div class="card">
-          <div class="item item-text-wrap" style="background-color: #7B1FA2">
-           	<h2 style="color: white;">What's hot?</h2>
-           	<h3 style="color: white;">lorem ipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-           	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-           	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-           	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-           	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-           	proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </h3>
-          </div>  
-        </div>
-
-        <div class="card">
-          <div class="item item-text-wrap" style="background-color: #7B1FA2">
-           	<h2 style="color: white;">What's hot?</h2>
-           	<h3 style="color: white;">lorem ipLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-           	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-           	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-           	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-           	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-           	proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </h3>
-          </div>
-        </div>
+<ion-view title="Home Reservation" id="page2"  ng-init = "init()">
+    <ion-content padding="true" class="has-header" >
+    <h3 id="setAppointment-heading4" style="font-weight:lighter;" ng-if = "appointmentList.length <= 1">No Reservations yet</h3>
+        <ion-list id="asdf" ng-repeat = "reserve in reservationList">
+            <ion-item id="choosePackage-list-item13">
+                <h2>Reservation for: {{reserve.strName}}</h2>
+                <h3 class="sub-text">Reservation ID No.: {{reserve.intWalkInID}} Status: {{reserve.strWalkInStatus}}</h3>
+            </ion-item>
+        </ion-list>
+    	<a ui-sref="tabsController.requestHomeReservation" id="homeReservation-button3" class="button button-royal  button-block ion-plus-round z-depth-2">Reserve Now</a>
+       
        
     </ion-content>
 </ion-view>

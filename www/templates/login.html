@@ -6,8 +6,25 @@
             </div>
             <h1 id="login-heading1" style="color:#FFFFFF;font-weight:lighter;text-align:center;">Salon App</h1>
             <div class="spacer" style="height: 40px;"></div>
-            <a ui-sref="tabsController.homeReservation" id="login-button1" class="button button-calm  button-block">CONTINUE</a>
-            <a href="#" onclick="window.open('/signup', '_system', 'location=yes'); return false;" id="login-button2" class="button button-positive  button-block button-clear">Sign in as employee</a>
+            <label class="item item-input" id="createAppointment-input3">
+                <span class="input-label">Username</span>
+                <input type="text" placeholder="" ng-model = "user.username">
+            </label>
+            <label class="item item-input" id="createAppointment-input3">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="" ng-model = "user.password">
+            </label>
+            <li class="item item-toggle item-royal">
+                I'm an employee
+                <label class="toggle toggle-positive">
+                  <input type="checkbox" ng-model = "user.isEmployee">
+                  <div class="track">
+                    <div class="handle"></div>
+                  </div>
+                </label>
+             </li>
+            <a ng-click = "login(user)" id="login-button1" class="button button-calm  button-block">Log In</a>
+            <a href="#" ui-sref = "signUp" id="login-button2" class="button button-positive  button-block button-clear">Register Now!</a>
         </form>
     </ion-content>
 </ion-view>

@@ -1,7 +1,12 @@
-<ion-view title="Product Order" id="page4">
-    <ion-content padding="true" style="background: url(img/ctRN83TDysjCdO2mySOQ_bg.png) no-repeat center;background-size:cover;" class="has-header">
-        <h3 id="productOrder-heading5" style="color:#FFFFFF;font-weight:lighter;">Mahal ni jeff yung jowa nya.</h3>
-        <div class="spacer" style="width: 300px; height: 331px;"></div>
+<ion-view title="Product Order" id="page4"  ng-init = "init()">
+    <ion-content padding="true" class="has-header">
+        <h3 id="setAppointment-heading4" style="font-weight:lighter;" ng-if = "appointmentList.length <= 1">No Orders yet</h3>
+        <ion-list id="asdf" ng-repeat = "order in orderList">
+            <ion-item id="choosePackage-list-item13">
+                <h2>Order for: {{order.strName}}</h2>
+                <h3 class="sub-text">Order ID No.: {{order.intSalesID}} Status: {{order.strStatus}}</h3>
+            </ion-item>
+        </ion-list>
         <a ui-sref="tabsController.createOrder" id="productOrder-button4" class="button button-royal  button-block">Order Product/s</a>
     </ion-content>
 </ion-view>

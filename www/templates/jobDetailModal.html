@@ -1,0 +1,17 @@
+<ion-modal-view>
+   <ion-header-bar class = "bar bar-header bar-calm">
+     <h1 class="title">View Job Detail</h1>
+   </ion-header-bar>
+   <ion-content>
+   		<div class="list card" id="productDetails-card21">
+   		    <ion-item id="productDetails-list-item2">{{name}} - {{id}}</ion-item>
+   		     <ion-list>
+             <ion-radio ng-model="job.status" value="ON THE WAY TO VENUE" selected>On the way to venue</ion-radio>
+             <ion-radio ng-model="job.status" value="ON THE WAY TO SALON">Service Finished</ion-radio>
+           </ion-list>
+   		</div>
+   		<button id="productDetails-button5" class="button button-balanced  button-block icon-left ion-android-cart"
+                ng-click = "updateJobStatus(job.status); closeModal()">Update Status</button>
+     <a ng-click = "closeModal()" id="closeModalButton" class="button button-assertive  button-block button-outline">Cancel</a>
+   </ion-content>
+ </ion-modal-view>

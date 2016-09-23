@@ -1,0 +1,49 @@
+<ion-view title="Job Details" id="page13">
+    <ion-content padding="true" class="has-header">
+        <div class="row">
+            <a class="button button-icon icon ion-settings col col-10"></a>
+             <a class="button button-icon icon ion-settings col col-10 col-offset-80"></a>
+        </div>
+        
+        <div>
+            <img ng-src="http://localhost{{empDetails.blobEmpPhoto}}" style=" width: 200px;
+                                                                            height: 200px;
+                                                                            position: absolute;
+                                                                            top: 2%;
+                                                                            left: 25%;
+                                                                            margin: auto;
+                                                                            display: block;
+                                                                            overflow: hidden;
+                                                                            border-radius: 50%;" align="center">
+        </div>
+        
+        <h2 style="font-weight:lighter; margin-top: 210px;" align="center">{{empDetails.strEmpFirstName}} {{empDetails.strEmpLastName}}</h2>
+        <ul ng-repeat = "qual in empDetails.specialization" align = "center">
+            <li>
+               {{qual.strJobDesc}} 
+            </li>
+        </ul>
+        
+        <h5>Walk In</h5>
+        <ion-list id="asdf" ng-repeat = "walkin in walkinList">
+            <ion-item id="choosePackage-list-item13" ng-click = "openWalkinModal($index)">
+                <h2 style="font-weight: lighter;">Walk-in for: {{walkin.strCustomerName}}</h2>
+                <h3 class="sub-text">Job ID No.: {{walkin.intJobID}}</h3>
+            </ion-item>
+        </ion-list>
+        <h5>Delivery</h5>
+        <ion-list id="asdf" ng-repeat = "delivery in deliveryList">
+            <ion-item id="choosePackage-list-item13" ng-click = "openDeliveryModal($index)">
+                <h2 style="font-weight: lighter;">Delivery for: {{delivery.strCustomerName}}</h2>
+                <h3 class="sub-text">Job ID No.: {{delivery.intJobID}}</h3>
+            </ion-item>
+        </ion-list>
+        <h5>Reservation</h5>
+        <ion-list id="asdf" ng-repeat = "reservation in reservationList">
+            <ion-item id="choosePackage-list-item13" ng-click = "openReservationModal($index)">
+                <h2 style="font-weight: lighter;">Reservation for: {{reservation.strCustomerName}}</h2>
+                <h3 class="sub-text">Job ID No.: {{reservation.intJobID}}</h3>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,23 +1,43 @@
 <ion-view title="Choose Prodcuts/Services" id="page11">
     <ion-content padding="true" class="has-header">
         <ion-list id="chooseProdcutsServices-list4">
-            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item5" ui-sref="tabsController.createOrder">Choose Products
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item5" ui-sref="tabsController.chooseProduct" ng-if = "!fromAppointment">Choose Products
                 <i class="icon ion-ios-arrow-right"></i>
             </ion-item>
-            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item9" ui-sref="tabsController.chooseService">Choose Sevice
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item5" ui-sref="tabsController.chooseProductApp" ng-if = "fromAppointment">Choose Products
                 <i class="icon ion-ios-arrow-right"></i>
             </ion-item>
-            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item10" ui-sref="tabsController.choosePackage">Choose Packages
+
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item9" ui-sref="tabsController.chooseService" ng-if = "!fromAppointment">Choose Service
                 <i class="icon ion-ios-arrow-right"></i>
             </ion-item>
-            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item11" ui-sref="tabsController.choosePromo">Choose Promos
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item9" ui-sref="tabsController.chooseServiceApp" ng-if = "fromAppointment">Choose Services
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item10" ui-sref="tabsController.choosePackage" ng-if = "!fromAppointment">Choose Packages
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item10" ui-sref="tabsController.choosePackageApp"  ng-if = "fromAppointment">Choose Packages
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item11" ui-sref="tabsController.choosePromo" ng-if = "!fromAppointment">Choose Promos
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item10" ui-sref="tabsController.choosePackageApp"  ng-if = "fromAppointment">Choose Packages
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+
+            <ion-item class="item-icon-right" id="chooseProdcutsServices-list-item11" ng-click = "modal.show()" ng-if = "!fromAppointment">Choose Employees
                 <i class="icon ion-ios-arrow-right"></i>
             </ion-item>
         </ion-list>
         <ion-list id="chooseProdcutsServices-list7">
             <ion-item class="item-divider" id="chooseProdcutsServices-list-item-divider2">{{netTotal | currency: "Php"}}</ion-item>
         </ion-list>
-        <button id="chooseProdcutsServices-button11" class="button button-royal  button-block icon-right ion-checkmark-round" ng-click = "submitReservation()">Request!</button>
+        <button id="chooseProdcutsServices-button11" class="button button-royal  button-block icon-right ion-checkmark-round" ng-click = "submitReservation()"  ng-if = "!fromAppointment">Request!</button>
+        <button id="chooseProdcutsServices-button11" class="button button-royal  button-block icon-right ion-checkmark-round" ng-click = "submitAppointment()"  ng-if = "fromAppointment">Request!</button>
         <a ui-sref="tabsController.homeReservation" id="chooseProdcutsServices-button13" class="button button-assertive  button-block button-outline">CANCEL</a>
     </ion-content>
 </ion-view>

@@ -2,7 +2,7 @@
     <ion-content padding="true" class="has-header">
         <div class="item item-body" id="choosePromo-list-item-container5">
             <ion-list id="choosePromo-list10" ng-repeat = "promo in promoList">
-                <ion-item class="item-thumbnail-left" id="choosePromo-list-item14" ui-sref="productDetails">
+                <ion-item class="item-thumbnail-left" id="choosePromo-list-item14" ng-click = "openModal($index)">
                     <h2>{{promo.strPromoName}}</h2>
                     <h3>{{promo.dblPromoPrice | currency: "Php"}}</h3>
                 </ion-item>

@@ -1,7 +1,12 @@
-<ion-view title="Set Appointment" id="page3">
-    <ion-content padding="true" style="background: url(img/kTOwZ5U2QSStScKZagip_bg.png) no-repeat center;background-size:cover;" class="has-header">
-        <h3 id="setAppointment-heading4" style="color:#FFFFFF;font-weight:lighter;">Madali lang gumawa ng system, kaya ng isang tao.</h3>
-        <div class="spacer" style="width: 300px; height: 234px;"></div>
+<ion-view title="Set Appointment" id="page3" ng-init = "init()">
+    <ion-content padding="true"  class="has-header">
+        <h3 id="setAppointment-heading4" style="font-weight:lighter;" ng-if = "appointmentList.length <= 1">No appointments yet</h3>
+        <ion-list id="asdf" ng-repeat = "app in appointmentList">
+            <ion-item id="choosePackage-list-item13">
+                <h2>Appointment for: {{app.strName}}</h2>
+                <h3 class="sub-text">Appointment ID No.: {{app.intWalkInID}} Status: {{app.strWalkInStatus}}</h3>
+            </ion-item>
+        </ion-list>
         <a ui-sref="tabsController.createAppointment" id="setAppointment-button8" class="button button-royal  button-block">Set Appointment</a>
     </ion-content>
 </ion-view>

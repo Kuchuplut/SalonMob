@@ -1,21 +1,17 @@
 <ion-view title="OrderSummary" id="page10">
     <ion-content padding="true" class="has-header">
         <form id="orderSummary-form5" class="list" ng-submit = "submitRequest(details)">
-            <ion-toggle toggle-class="toggle-positive" id="orderSummary-toggle2" ng-model = "details.orderType">Delivery</ion-toggle>
-            <label class="item item-input" id="orderSummary-input17">
-                <span class="input-label">Name</span>
-                <input type="text" placeholder="" ng-model = "details.name">
-            </label>
-            <label class="item item-input" id="orderSummary-input18">
-                <span class="input-label">Contact No.</span>
-                <input type="tel" placeholder="" ng-model = "details.number">
-            </label>
-            <label class="item item-input" id="orderSummary-input19" ng-if = "details.orderType">
+           
+           <h3>Order for:</h3>
+            <h4>Name: <span style="font-weight: lighter;">{{customerDetails.strCustName}}</span></h4>
+            <h4>Contact No.: <span style="font-weight: lighter;"> {{customerDetails.strEmail}}</span></h4>
+            <h4>Email.: <span style="font-weight: lighter;"> {{customerDetails.strContactNo}}</span></h4>
+            <label class="item item-input" id="orderSummary-input19">
                 <span class="input-label">Street</span>
                 <input type="text" placeholder="" ng-model = "details.street">
             </label>
        
-            <label class="item item-select" id="orderSummary-select2" ng-if = "details.orderType">
+            <label class="item item-select" id="orderSummary-select2">
                 <span class="input-label">Location</span>
                 <select ng-model = "details.selectedLocation" ng-change = "compute()">
                     <option ng-repeat = "location in locationList" ng-value = "location.intLocationID">

@@ -1,0 +1,15 @@
+<ion-modal-view>
+   <ion-header-bar class = "bar bar-header bar-calm">
+     <h1 class="title">Choose Employees</h1>
+   </ion-header-bar>
+   <ion-content>
+   		<ion-list ng-repeat = "employee in employeeList" >
+
+        <ion-checkbox ng-model = "employees[employee.intEmpID]">{{employee.strEmpFirstName}}</ion-checkbox>
+
+      </ion-list>
+   		<button id="productDetails-button5" class="button button-balanced  button-block icon-left ion-android-cart"
+                ng-click = "sendEmployees(); closeModal()">Choose Selected</button>
+     <a ng-click = "closeModal()" id="closeModalButton" class="button button-assertive  button-block button-outline">Cancel</a>
+   </ion-content>
+ </ion-modal-view>

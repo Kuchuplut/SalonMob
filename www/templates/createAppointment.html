@@ -1,27 +1,24 @@
 <ion-view title="Create Appointment" id="page8">
     <ion-content padding="true" class="has-header">
         <form id="createAppointment-form3" class="list">
-            <label class="item item-input" id="createAppointment-input3">
-                <span class="input-label">Name</span>
-                <input type="text" placeholder="">
-            </label>
-            <label class="item item-input" id="createAppointment-input4">
-                <span class="input-label">Address</span>
-                <input type="text" placeholder="">
-            </label>
-            <label class="item item-input" id="createAppointment-input5">
-                <span class="input-label">Contact No.</span>
-                <input type="tel" placeholder="">
-            </label>
-            <label class="item item-input" id="createAppointment-input6">
-                <span class="input-label">Email</span>
-                <input type="email" placeholder="">
-            </label>
-            <label class="item item-input" id="createAppointment-input7">
-                <span class="input-label">Expected Time</span>
-                <input type="time" placeholder="">
-            </label>
+
+            <h3>Order for:</h3>
+            <h4>Name: <span style="font-weight: lighter;">{{customerDetails.strCustName}}</span></h4>
+            <h4>Contact No.: <span style="font-weight: lighter;"> {{customerDetails.strEmail}}</span></h4>
+            <h4>Email.: <span style="font-weight: lighter;"> {{customerDetails.strContactNo}}</span></h4>
+
+
+            <div class="item item-icon-left" ion-datetime-picker date only-valid="{'after': 'today', 'inclusive': true}" ng-model="details.dateValue">
+                <i class="icon ion-ios-calendar positive"></i>
+               
+                <strong>{{details.dateValue| date: "MMM dd, yyyy"}}</strong>
+            </div>
+            <div class="item item-icon-left" ion-datetime-picker time am-pm ng-model="details.timeValue">
+                <i class="icon ion-ios-clock-outline positive"></i>
+               
+                <strong>{{details.timeValue| date: "h:mm a"}}</strong>  
+            </div>
         </form>
-        <button id="createAppointment-button6" class="button button-royal  button-block icon-right ion-checkmark">REQUEST</button>
+        <button  ui-sref="tabsController.chooseProdcutsServicesApp" id="orderSummary-button9" class="button button-royal  button-block icon-right ion-android-arrow-dropright" type = "submit" value="action" ng-click = "sendDetails(details)">Next</button>
     </ion-content>
 </ion-view>

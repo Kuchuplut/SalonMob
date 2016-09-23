@@ -1,10 +1,13 @@
 <ion-view title="Create Order" id="page12">
     <ion-content padding="true" class="has-header">
         <form id="createOrder-form7" class="list">
-            <a ui-sref="orderSummary" id="createOrder-button12" style="border-radius:20px 20px 20px 20px;" class="button button-balanced  button-block icon-right ion-android-done">Check out!</a>
-            <label class="item item-select" id="createOrder-select3">
+            <a ng-click = "gotoOrderSummary()" id="createOrder-button12" style="border-radius:20px 20px 20px 20px;" class="button button-balanced  button-block icon-right ion-android-done">Check out!</a>
+            <label class="item item-select" id="productSelect">
                 <span class="input-label">Category</span>
-                <select></select>
+                <select ng-model = "details">
+                    <option ng-repeat = "product in productList" ng-value = "product.strProductCategory">
+                    {{product.strProductCategory}}</option>
+                </select>
             </label>
         </form>
         <div class="item item-body" id="createOrder-list-item-container3">

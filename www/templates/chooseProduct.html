@@ -1,0 +1,12 @@
+<ion-view title="Choose Product" id="page13">
+    <ion-content padding="true" class="has-header">
+        <div class="item item-body" id="choosePackage-list-item-container4">
+            <ion-list id="choosePackage-list9" ng-repeat = "product in productList">
+                <ion-item class="item-thumbnail-left" id="choosePackage-list-item13" ng-click = "openModal($index)">
+                    <h2>{{product.strProductName}}</h2>
+                    <h3 class="sub-text">{{package.dblProductPrice | currency: "Php"}}</h3>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>
