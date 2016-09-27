@@ -27,8 +27,8 @@
         <h5>Walk In</h5>
         <ion-list id="asdf" ng-repeat = "walkin in walkinList">
             <ion-item id="choosePackage-list-item13" ng-click = "openWalkinModal($index)">
-                <h2 style="font-weight: lighter;">Walk-in for: {{walkin.strCustomerName}}</h2>
-                <h3 class="sub-text">Job ID No.: {{walkin.intJobID}}</h3>
+                <h2 style="font-weight: lighter;">Service: {{walkin.strServiceName}}</h2>
+                <h3 class="sub-text">Customer: {{walkin.strCustomerName}}</h3>
             </ion-item>
         </ion-list>
         <h5>Delivery</h5>
@@ -42,7 +42,7 @@
         <ion-list id="asdf" ng-repeat = "reservation in reservationList">
             <ion-item id="choosePackage-list-item13" ng-click = "openReservationModal($index)">
                 <h2 style="font-weight: lighter;">Reservation for: {{reservation.strCustomerName}}</h2>
-                <h3 class="sub-text">Job ID No.: {{reservation.intJobID}}</h3>
+                <h3 class="sub-text">Date: {{reservation.strJobDate}}</h3>
             </ion-item>
         </ion-list>
     </ion-content>
