@@ -36,7 +36,7 @@
         <ion-list id="chooseProdcutsServices-list7">
             <ion-item class="item-divider" id="chooseProdcutsServices-list-item-divider2">{{netTotal | currency: "Php"}}</ion-item>
         </ion-list>
-        <button id="chooseProdcutsServices-button11" class="button button-royal  button-block icon-right ion-checkmark-round" ng-click = "submitReservation()"  ng-if = "!fromAppointment">Request!</button>
+        <button id="chooseProdcutsServices-button11" class="button button-royal  button-block icon-right ion-checkmark-round" ng-click = "openModal2()"  ng-if = "!fromAppointment">Request!</button>
         <button id="chooseProdcutsServices-button11" class="button button-royal  button-block icon-right ion-checkmark-round" ng-click = "submitAppointment()"  ng-if = "fromAppointment">Request!</button>
         <a ui-sref="tabsController.homeReservation" id="chooseProdcutsServices-button13" class="button button-assertive  button-block button-outline">CANCEL</a>
     </ion-content>

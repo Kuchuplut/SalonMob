@@ -234,20 +234,24 @@ angular.module('app.services', [])
                   success: function (data) {
                     console.log("Success");
                     console.log(psdata);
-                    var alertPopup = $ionicPopup.alert({
-                      title:'Appoint successfully Reserved!',
-                      template: 'Buy more!'
-                    });
-
-                    alertPopup.then(function(res) {
-                      $state.go('tabsController.productOrder');
-                    });
+                    successMessage();
                   },
                   error: function () {
                       console.log("Error in posting");
                       console.log(psdata);
                   }
               });
+
+              function successMessage(){
+                var alertPopup2 = $ionicPopup.alert({
+                  title:'Appointment successfully created!',
+                  template: 'Set another!'
+                });
+
+                alertPopup2.then(function(res) {
+                  $state.go('tabsController.setAppointment');
+                });
+              }
                              
          },
          saveVerification: function(varificationCode, verificationID, accountID){
@@ -313,11 +317,7 @@ angular.module('app.services', [])
                 alertPopup.then(function(res) {
                   $state.go('tabsController.productOrder');
                 });
-              }
-                 
-             
-              
-                             
+              }         
          },
          saveHomeReservation: function(customerDetails, homeReservationDetails, selectedService, serviceQuantity, 
                                   selectedPromo, PromoQuantity, selectedPackage, packageQuantity, 
@@ -366,12 +366,12 @@ angular.module('app.services', [])
               });
 
               function isSuccess(){
-                var alertPopup = $ionicPopup.alert({
+                var alertPopup3 = $ionicPopup.alert({
                   title:'Reservation successfully created!',
                   template: 'Reserve another!'
                 });
 
-                alertPopup.then(function(res) {
+                alertPopup3.then(function(res) {
                   $state.go('tabsController.homeReservation');
                 });
 
@@ -379,10 +379,7 @@ angular.module('app.services', [])
                 promoDetails = [{}];
                 packageDetails = [{}];
                 productDetails = [{}];
-              }
-                
-              
-                             
+              }                     
          }
      }
 }])

@@ -1,0 +1,18 @@
+<ion-modal-view>
+   <ion-header-bar class = "bar bar-header bar-calm">
+     <h1 class="title">Confirm Order</h1>
+   </ion-header-bar>
+   <ion-content>
+   		
+
+      <p ng-reprat = " product in productList">{{product.quantity}} - {{product.name}}</p>
+      <p ng-reprat = " service in serviceList">{{service.quantity}} - {{service.name}}</p>
+      <p ng-reprat = " prmomo in promoList">{{prmomo.quantity}} - {{prmomo.name}}</p>
+      <p ng-reprat = " package in packageList">{{package.quantity}} - {{package.name}}</p>
+
+   		<button id="productDetails-button5" class="button button-balanced  button-block icon-left ion-android-cart"
+                ng-click = "submitReservation(); closeModal()">SUMBIT</button>
+     <a ng-click = "closeModal()" id="closeModalButton" class="button button-assertive  button-block button-outline">Cancel</a>
+    
+   </ion-content>
+ </ion-modal-view>

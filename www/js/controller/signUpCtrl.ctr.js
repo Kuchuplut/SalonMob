@@ -38,8 +38,9 @@
 			 	         accID = data.verification.intCustomerID;
 			 	         verCode = data.verification.strVerificationCode;
 			 	       },
-			 	       error: function () {
-			 	           console.log("Error in posting");
+			 	       error: function (data) {
+			 	       		console.log(data);
+			 	            console.log("Error in posting");
 			 	       }
 			 	   }); 
 			 };
