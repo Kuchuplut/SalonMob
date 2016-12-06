@@ -31,10 +31,28 @@ angular.module('app.services', [])
                  return data;
              });
          },
-         getEmployees: function () {
-             return $http.get('http://'+ urlBase + ':8080/SalonManagement/api/v1/getAllEmployee').then(function (data) {
-                 return data;
-             });
+         getEmployees: function (date, time) {
+             
+             var dateAndTime = $.param({
+                    'date': date,
+                    'time': time,
+                    'type': "home service"
+                });
+
+              return $http({
+                    method: 'post',
+                    url: 'http://localhost:8080/SalonManagement/getAvailableEmployee',
+                    data: dateAndTime,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                }).then(function successCallback(data) {
+                    return data.data.empList;
+                   console.log(data.data)
+                }, function errorCallback(response) {
+                    return response;
+                    console.log(response)
+                });
          },
          getServices: function () {
              return $http.post('http://'+ urlBase + ':8080/SalonManagement/getServiceByType?type=walkin', { "type": "walkin" }).success(function(response) {

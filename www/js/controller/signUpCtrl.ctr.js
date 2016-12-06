@@ -37,6 +37,7 @@
 			 	         verID = data.verification.intVerificationID;
 			 	         accID = data.verification.intCustomerID;
 			 	         verCode = data.verification.strVerificationCode;
+			 	         verify(verID, accID, ver);
 			 	       },
 			 	       error: function (data) {
 			 	       		console.log(data);
@@ -44,6 +45,33 @@
 			 	       }
 			 	   }); 
 			 };
+
+			 function verify(){
+			 	var urlBase = dataFactory.getURL();
+		 	    var psdata = {
+		 	                  "intVerificationID": verID,
+		 	                  "strVerificationCode": verCode,
+		 	                  "intAccountID": accID
+		 	              
+		 	              };
+		 	    
+		 	      return $.ajax({
+		 	          url: 'http://'+ urlBase + ':8080/SalonManagement/verifyCustomer',
+		 	          type: 'post',
+		 	          data: psdata,
+		 	          dataType: 'json',
+		 	          async: true,
+		 	          success: function (data) {
+		 	            console.log("Success");
+		 	            console.log(data);
+		 	            isSuccess();
+		 	          },
+		 	          error: function (data) {
+		 	              console.log("Error in posting");
+		 	              console.log(psdata);
+		 	          }
+		 	      });
+			 }
 
 			 $scope.resendVerification = function(){
 			 	var urlBase = dataFactory.getURL();

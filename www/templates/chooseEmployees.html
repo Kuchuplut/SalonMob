@@ -9,7 +9,7 @@
 
       </ion-list>
    		<button id="productDetails-button5" class="button button-balanced  button-block icon-left ion-android-cart"
-                ng-click = "sendEmployees(); closeModal()">Choose Selected</button>
-     <a ng-click = "closeModal()" id="closeModalButton" class="button button-assertive  button-block button-outline">Cancel</a>
+                ng-click = "sendEmployees(); modal.hide()">Choose Selected</button>
+     <a ng-click = "modal.hide()" id="closeModalButton" class="button button-assertive  button-block button-outline">Cancel</a>
    </ion-content>
  </ion-modal-view>

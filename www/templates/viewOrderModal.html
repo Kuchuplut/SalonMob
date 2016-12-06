@@ -5,10 +5,10 @@
    <ion-content>
    		
 
-      <p ng-reprat = " product in productList">{{product.quantity}} - {{product.name}}</p>
-      <p ng-reprat = " service in serviceList">{{service.quantity}} - {{service.name}}</p>
-      <p ng-reprat = " prmomo in promoList">{{prmomo.quantity}} - {{prmomo.name}}</p>
-      <p ng-reprat = " package in packageList">{{package.quantity}} - {{package.name}}</p>
+      <p ng-repeat = " product in productList" ng-if="productList.length >= 2">{{product.quantity}}  {{product.name}}</p>
+      <p ng-repeat = " service in serviceList" ng-if="serviceList.length >= 2">{{service.quantity}}  {{service.name}}</p>
+      <p ng-repeat = " prmomo in promoList" ng-if="promoList.length >= 2">{{prmomo.quantity}}  {{prmomo.name}}</p>
+      <p ng-repeat = " package in packageList" ng-if="packageList.length >= 2">{{package.quantity}}  {{package.name}}</p>
 
    		<button id="productDetails-button5" class="button button-balanced  button-block icon-left ion-android-cart"
                 ng-click = "submitReservation(); closeModal()">SUMBIT</button>

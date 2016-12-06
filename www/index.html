@@ -88,7 +88,10 @@
             <ion-header-bar class="bar-stable">
                 <div class="title">Menu</div>
             </ion-header-bar>
-            <ion-content padding="false" class="side-menu-right has-header"></ion-content>
+            <ion-content padding="false" class="side-menu-right has-header">
+              
+              <a ng-click=" $state.go('login')" href="#" ui-sref="login">Log out</a>
+            </ion-content>
         </ion-side-menu>
     </ion-side-menus>
 </div>

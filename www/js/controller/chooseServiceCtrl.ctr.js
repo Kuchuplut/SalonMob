@@ -23,7 +23,6 @@
 			   		});
 
 			   		alertPopup.then(function(res) {
-			   		  console.log('Thank you for not eating my delicious ice cream cone');
 			   		});
 			     dataFactory.setServiceDetails($scope.name, $scope.id, $scope.service.quantity, $scope.price*$scope.service.quantity);
 			   }
@@ -45,7 +44,7 @@
 			   $scope.$on('modal.hidden', function() {
 			     // Execute action
 			   });
-			   // Execute action on remove modal
+			   // Execute action on remove moda
 			   $scope.$on('modal.removed', function() {
 			     // Execute action
 			   });

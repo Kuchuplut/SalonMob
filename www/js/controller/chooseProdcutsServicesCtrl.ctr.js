@@ -22,8 +22,10 @@
 			    $scope.dependencyList = data.data.dependencies;
 			    homeServiceDependency = parseFloat($scope.dependencyList[5].strValue);
 			 });
-			dataFactory.getEmployees().then(function (data) {
-			    $scope.employeeList = data.data.employeeList;
+			console.log(homeReservationDetails);
+			dataFactory.getEmployees(homeReservationDetails.date, homeReservationDetails.time).then(function (data) {
+			    $scope.employeeList = data;
+			    console.log(data);
 			 });
 			dataFactory.getLocation().then(function (data) {
 			    $scope.locationList = data.data.locationList;
