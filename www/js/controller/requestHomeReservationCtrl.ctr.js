@@ -15,7 +15,7 @@
 
 			$scope.sendDetails = function(details, dtm){
 			  console.log("sending details");			  
-			  var date =  moment(dtm.dateValue).format("YYYY/MM/DD");
+			  var date =  moment(dtm.dateValue).format("MMMM/d/YYYY");
 			  var time =  moment(dtm.timeValue).format("hh:mm:ss");
 			  moment()
 			  dataFactory.setHomeReservationDetails(details, date, time);

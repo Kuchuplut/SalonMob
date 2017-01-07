@@ -159,6 +159,8 @@
 			  $scope.packageList = dataFactory.getPackageDetails();
 			  $scope.productList = dataFactory.getProductDetails();
 
+			  console.log($scope.promoList);
+
 			  var netTotal = 0;
 			  var subTotal = 0;
 			  var selectedProduct = "";
@@ -211,8 +213,8 @@
 			  	}
 			  	netTotal =(locationCost + subTotal);
 			  	$scope.netTotal = netTotal;
-			 
-
+			 	console.log("From controller: ");
+			  	console.log(PromoQuantity);
 			   dataFactory.saveHomeReservation(customerDetails, homeReservationDetails, selectedService, serviceQuantity, 
 			                                  selectedPromo, PromoQuantity, selectedPackage, packageQuantity, 
 			                                  selectedProduct, productQuantity, $scope.netTotal, selectedEmployees);

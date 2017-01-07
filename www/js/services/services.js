@@ -340,6 +340,8 @@ angular.module('app.services', [])
          saveHomeReservation: function(customerDetails, homeReservationDetails, selectedService, serviceQuantity, 
                                   selectedPromo, PromoQuantity, selectedPackage, packageQuantity, 
                                   selectedProduct, productQuantity, totalPrice, selectedEmployees){
+            console.log("From factory:");
+            console.log(PromoQuantity);
             var success = false;
             var total = "";
             total = totalPrice + "";          
@@ -363,7 +365,7 @@ angular.module('app.services', [])
                           "productQuantity": productQuantity,
                           "serviceQuantity": serviceQuantity,
                           "packageQuantity": packageQuantity,
-                          "promoQuantity": packageQuantity,
+                          "promoQuantity": PromoQuantity,
                       };
           
               $.ajax({
